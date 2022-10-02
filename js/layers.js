@@ -46,7 +46,7 @@ addLayer("sb", {
     exponent: 0.76, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1.9)
-        mult = mult.mul(tmp.csg.effect.z)
+        if (player.csg.unlocked) mult = mult.mul(tmp.csg.effect.z)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -151,7 +151,7 @@ addLayer("csg", {
     ],
     layerShown(){return player.sb.points.gte(30) || player.csg.unlocked},
     update(diff) {
-        player.csg.generated = player.csg.generated.add(new Decimal(diff).mul(tmp.csg.effect.x))
+        if (player.csg.unlocked) player.csg.generated = player.csg.generated.add(new Decimal(diff).mul(tmp.csg.effect.x))
     },
     tabFormat: [
         "main-display",

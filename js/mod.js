@@ -56,7 +56,7 @@ function getPointGen() {
 	gain = gain.mul(tmp.sb.effect)
 	if (hasMilestone('sb',0)) gain = gain.mul(2.5)
 	if (hasMilestone('sb',1)) gain = gain.mul(tmp.sb.milestones[1].effect)
-	gain = gain.mul(tmp.csg.effect.y)	
+	if (player.csg.unlocked) gain = gain.mul(tmp.csg.effect.y)	
 	return gain
 }
 
