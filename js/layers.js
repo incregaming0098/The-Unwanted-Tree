@@ -54,7 +54,7 @@ addLayer("sb", {
     },
     row: 'side', // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "s", description: "S: Reset for Small Boosters", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){ return player.points.gte(8.2) || player.sb.unlocked},
     effect() {
@@ -147,7 +147,7 @@ addLayer("csg", {
     },
     row: 'side', // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "c", description: "C: Reset for CSG.", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return player.sb.points.gte(30) || player.csg.unlocked},
     update(diff) {
